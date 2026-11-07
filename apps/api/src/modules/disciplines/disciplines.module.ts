@@ -19,5 +19,7 @@ import { DrizzleDisciplineRepository } from './infra/drizzle-discipline.reposito
     UpdateDiscipline,
     DeleteDiscipline,
   ],
+  // Le module Bénévoles vérifie qu'une discipline existe avant d'y ouvrir un créneau.
+  exports: [DisciplineRepository],
 })
 export class DisciplinesModule {}
