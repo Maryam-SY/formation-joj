@@ -73,7 +73,7 @@ Chaque scénario de la spec est prouvé par au moins un test, au niveau le plus 
 
 Cinq tâches, dans l'ordre des couches. Chaque tâche nomme le test à écrire d'abord et cite les scénarios qu'elle couvre ; elle tient dans un commit.
 
-- [ ] T01 [001-AS2] Écrire d'abord `apps/api/src/modules/volunteers/domain/slot.spec.ts` (« 001-AS2: rejects an invalid capacity or time range »), puis les schémas de `packages/shared/src/volunteers.ts`, `volunteers.errors.ts` et `Slot.create()` / `Slot.restore()`
+- [x] T01 [001-AS2] Écrire d'abord `apps/api/src/modules/volunteers/domain/slot.spec.ts` (« 001-AS2: rejects an invalid capacity or time range »), puis les schémas de `packages/shared/src/volunteers.ts`, `volunteers.errors.ts` et `Slot.create()` / `Slot.restore()`
 - [ ] T02 [001-AS5, AS6] Écrire d'abord `domain/registration.spec.ts` (« 001-AS5: rejects an empty name or a malformed email ») et un test dans `domain/slot.spec.ts` (« 001-AS6: refuses a registration on a full slot »), puis `Registration.create()` et `Slot.register()`
 - [ ] T03 [001-AS1, AS3, AS4, AS7] Écrire d'abord `application/volunteers.application.spec.ts` (« 001-AS1: opens a slot with no registration », « 001-AS3: … », « 001-AS4: … », « 001-AS7: … »), puis le port `SlotRepository`, sa version en mémoire, `OpenSlot`, `RegisterVolunteer`, et l'export de `DisciplineRepository` par `DisciplinesModule`
 - [ ] T04 [001-AS6] Écrire d'abord `infra/drizzle-slot.repository.int.spec.ts` (« 001-AS6: lets only one of two concurrent registrations take the last place »), puis `volunteers.schema.ts`, la migration générée, `slot.mapper.ts` et `DrizzleSlotRepository`
