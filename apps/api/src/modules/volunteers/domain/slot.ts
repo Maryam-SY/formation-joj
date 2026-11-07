@@ -1,4 +1,4 @@
-import { VolunteerError } from './volunteers.errors';
+import { slotFull, VolunteerError } from './volunteers.errors';
 
 export interface SlotProps {
   id: string;
@@ -69,6 +69,17 @@ export class Slot {
 
   get createdAt(): Date {
     return this.props.createdAt;
+  }
+
+  /**
+   * Occupe une place. Vérifié ici pour un message clair ; le repository le garantit aussi quand
+   * deux bénévoles visent la dernière place au même moment.
+   */
+  register(): void {
+    if (this.props.registeredCount >= this.props.capacity) {
+      throw slotFull(this.props.id, this.props.capacity);
+    }
+    this.props = { ...this.props, registeredCount: this.props.registeredCount + 1 };
   }
 }
 

@@ -58,4 +58,16 @@ describe('Slot', () => {
     });
     expect(slot.registeredCount).toBe(2);
   });
+
+  it('001-AS6: refuses a registration on a full slot', () => {
+    const slot = newSlot({ capacity: 2 });
+    slot.register();
+    slot.register();
+    expect(slot.registeredCount).toBe(2);
+
+    expect(() => slot.register()).toThrow(
+      expect.objectContaining({ code: 'SLOT_FULL', kind: 'CONFLICT' }),
+    );
+    expect(slot.registeredCount).toBe(2);
+  });
 });
